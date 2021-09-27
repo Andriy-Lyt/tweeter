@@ -1,0 +1,32 @@
+nav {
+  position:fixed; top:0; left:0;
+  z-index: 5;
+  height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  color:#fff; 
+  padding: 0 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  font-family: 'Bungee', cursive;
+  font-size: 2rem;
+}
+nav i {
+  color: red;
+  font-size: 2rem;;
+}
+#nav-right-block {
+  /* border: 2px solid green; */
+  height: 65px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#arrow {
+  color:red;
+}
