@@ -35,9 +35,16 @@
   }
  form button {
     padding: 6px;
-    background: #7289d4;
+    background: #667bc4;
+    border: 2px solid #a1aee0;
     color: #fff;
     font-family: 'Bungee', cursive;
+    transition: all 0.2s;
+  }
+  form button:hover{
+    background: #fff;
+    color: #667bc4;
+    border: 2px solid #667bc4;
   }
   .counter{
     font-family: 'Bungee', cursive;
@@ -45,6 +52,7 @@
 
   /* Posted Tweets: --------- */
   article.tweet {
+    margin-top: 5px;
     width: 30rem;
     border: 3px solid rgb(59, 58, 58);
     padding: 10px;
