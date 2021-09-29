@@ -5,32 +5,6 @@
  */
 $(document).ready(function() {
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
   const renderTweets = function(tweets) {
     // loops through tweets
     for(let $tweet of tweets) {
@@ -39,6 +13,23 @@ const data = [
       $('#tweets-container').append(createTweetElement($tweet));
     }
   }
+
+  function loadTweets() {
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:8080/tweets",
+    })
+    .done((data) => renderTweets(data));
+  }
+
+  loadTweets();
+
+  //clean user input function
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   function createTweetElement(tweet) {
     let $tweet = $(`
@@ -51,11 +42,11 @@ const data = [
           <span>${tweet.user.handle}</span>
         </header>
   
-        <p class="posted-tweet-text">${tweet.content.text}</p>
+        <p class="posted-tweet-text">${escape(tweet.content.text)} </p>
   
         <footer class="flex-row-sb flex-row-alend">
 
-<span class="need_to_be_rendered" datetime="2016-07-07T09:24:17Z">${timeago.format(tweet.created_at)}</span>
+        <span class="need_to_be_rendered" datetime="2016-07-07T09:24:17Z">${timeago.format(tweet.created_at)}</span>
 
           <span>
             <i class="fas fa-flag"></i>
@@ -69,13 +60,38 @@ const data = [
       return $tweet;
   }
 
-  renderTweets(data);
-    
+// Process New Tweet Form ---------
+$("#addtweet-form").on("submit", function(event) {
+
+  event.preventDefault();
+  const $formData = $('textarea#tweet-text').val();
+  console.log($formData);
+
+  if ($formData == '') {
+    $('#form-error').html("Please enter the Tweet text").css("border", "2px solid red");
+  }
+  else if($formData.length > 140) {
+    $('form-error').html("Max Tweet length is 140 characters").css("border", "2px solid red");
+  }
+  else{
+    $('#form-error').empty().css("border", "none");
+    const $formDataSer = $("#addtweet-form").serialize();
   
-  // Test / driver code (temporary) ------------
-  // const $tweet = createTweetElement(tweetData);
-  // console.log($tweet); // to see what it looks like
-  // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-  
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $formDataSer,
+    }).done(function() {
+      $('#tweets-container').empty();
+      loadTweets();
+    });
+  }
+});
+
+// scroll to tweets
+$('#arrow').on('click', function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
 }); // closing doc.ready funct
 

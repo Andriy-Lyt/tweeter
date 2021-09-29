@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -47,14 +48,15 @@
       </div>
     </nav>
 
+    <div id="top-buffer-div"></div>
+
     <header id="header-top">
       <div>
           <img id="avatar-img-headertop" src="/images/profile-hex.png" alt="avatar"> 
       </div>
-      <div>
-          <h2>Rock Star
-            <img id="guitar-img-headertop" src="/images/guitar.png" alt="guitar">
-          </h2>
+      <div id="guitar-div">
+          <h2>Rock Star</h2>
+          <img id="guitar-img-headertop" src="/images/guitar.png" alt="guitar">
       </div>
     </header>
 
@@ -62,13 +64,27 @@
 
     <main class="container">
 
+      <header id="header-main">
+        <div>
+            <img id="avatar-img-headertop" src="/images/profile-hex.png" alt="avatar"> 
+        </div>
+        <div id="guitar-div">
+            <h2>Rock Star</h2>
+            <img id="guitar-img-headertop" src="/images/guitar.png" alt="guitar">
+        </div>
+      </header>
+  
+    
+    <div id="tweetForm-Tweets-wrapper" >
+
     <!-- Adding a new Tweet form -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
 
-        <form action="/tweets" method="POST">
+        <form id="addtweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          <div  id="form-error"></div>
 
           <div class="flex-row-sb">
             <button type="submit">Tweet</button>
@@ -78,9 +94,9 @@
       </section>
 
   <!-- Showing posted Tweets -->
-  <div id="tweets-container"></div>
+      <div id="tweets-container"></div>
 
-
+  </div> 
 
     </main>
 

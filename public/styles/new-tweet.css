@@ -1,5 +1,10 @@
 /* font-family: 'Bungee', cursive;
   font-family: 'Source Sans Pro', sans-serif; */
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
 
   .flex-row-sb {
     display:flex;
@@ -14,26 +19,25 @@
   }
 
   /* adding a new Tweet: ------- */
-  form {
+  #addtweet-form {
     border: 3px solid #4056A1;
-    width: 30rem;
     padding: 20px;
     border-radius: 5px;
   }
-
-  label {
+  section.new-tweet h2 {text-align: center;}
+  #addtweet-form label {
     font-weight: 600;
   }
-  form textarea {
-    margin: 15px 0;
+  #addtweet-form textarea {
+    margin: 12px 0;
     width: 100%;
   }
-  form textarea:focus{
+  #addtweet-form textarea:focus{
     outline: none;
     border: 2px solid  #4056A1;
     box-shadow: 0 0 4px 1px #719ECE;  
   }
- form button {
+ #addtweet-form button {
     padding: 6px;
     background: #667bc4;
     border: 2px solid #a1aee0;
@@ -41,7 +45,7 @@
     font-family: 'Bungee', cursive;
     transition: all 0.2s;
   }
-  form button:hover{
+  #addtweet-form button:hover{
     background: #fff;
     color: #667bc4;
     border: 2px solid #667bc4;
@@ -53,14 +57,13 @@
   /* Posted Tweets: --------- */
   article.tweet {
     margin-top: 5px;
-    width: 30rem;
     border: 3px solid rgb(59, 58, 58);
     padding: 10px;
     min-height: 100px;
     border-radius: 5px;
   }
   article.tweet:hover {
-    box-shadow: 3px 3px 2px 3px #a5c0d1;
+    box-shadow: 0 0 2px 3px #97b3c5;
   }
 
   article.tweet footer {
@@ -73,6 +76,13 @@
   article.tweet footer .fas:hover {
     color: #b89c14;
   }
+  #form-error { 
+    font-size: 1.2rem;
+    color: red;
+    margin: -5px 0 12px 0;
+    padding: 5px;
+  }
+
 
 
 
