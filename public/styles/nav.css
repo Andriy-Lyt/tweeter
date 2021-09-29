@@ -3,12 +3,13 @@ nav {
   position:fixed; top:0; left:0;
   overflow: hidden;
   z-index: 5;
-  height: 80px;
+  height: 100px;
   width: 100vw;
   background-color: #4056A1;
   color:#fff; 
-  padding: 0 1.5em;
+  padding: 12px 1.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -21,19 +22,19 @@ nav i {
   font-size: 2rem;;
 }
 #nav-right-block {
+  /* border: 1px solid green; */
   height: 65px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  position:relative;
+}
+#nav-right-block div{
+  padding-top: 10px;
 }
 #arrow {
   /* border:1px solid lightgreen; */
   padding:5px;
-  position: relative;
+  position: absolute; right:-45px; top:0;
   color:red;
-  animation: arrow-anim 3s 1s infinite linear;
+  animation: arrow-anim 3s 1s infinite ;
   cursor: pointer;
 }
 @keyframes arrow-anim {
@@ -44,5 +45,21 @@ nav i {
 
 /* Tablet Desktop ------ */
 @media only screen and (min-width: 768px) {
-  nav { height: 120px; } 
+  nav { 
+    height: 120px; 
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 4rem;
+  } 
+  #nav-right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #arrow {
+    position: relative;
+  }
+  
+  
 }

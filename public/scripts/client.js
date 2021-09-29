@@ -90,7 +90,9 @@ $("#addtweet-form").on("submit", function(event) {
 
 // scroll to tweets
 $('#arrow').on('click', function() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  $('html, body').animate({
+    scrollTop: $("main.container").offset().top-40
+  },300);
 });
 
 }); // closing doc.ready funct

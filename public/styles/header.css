@@ -1,7 +1,7 @@
 /* Mobile ------ */
 #header-top, #header-main {
   overflow:hidden;
-  height: 300px;
+  height: 340px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   align-items: center;
   background-color: #cf8e02;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-  padding: 7px;
+  padding: 8px;
 }
 
 #header-top h2, #header-main h2 { 
@@ -34,13 +34,12 @@
   #header-top {display:none;}
 
   #header-main {
-    height: 200px;
-    width: 300px;
+    height: 210px;
+    width: 260px;
     display:flex; 
-    justify-content: space-around;
+    justify-content: center;
     margin: 30px 10px;
   }
-  #header-main h2 {font-size: 1.6rem;}
-  #avatar-img-headertop { height: 150px; }  
-  #guitar-img-headertop {height: 60px; }
+  #header-main h2 {font-size: 1.7rem;}
+  #guitar-img-headertop {height: 58px; right: -4.5rem;}
 }
