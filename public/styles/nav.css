@@ -1,12 +1,14 @@
 /* Mobile layout default ---- */
 nav {
-  position:fixed; top:0; left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
   z-index: 5;
   height: 100px;
   width: 100vw;
-  background-color: #4056A1;
-  color:#fff; 
+  background-color: #4056a1;
+  color: #fff;
   padding: 12px 1.5rem;
   display: flex;
   flex-direction: column;
@@ -14,43 +16,55 @@ nav {
   align-items: center;
 }
 #logo {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   font-size: 2rem;
 }
 nav i {
   color: red;
-  font-size: 2rem;;
+  font-size: 2rem;
 }
 #nav-right-block {
   /* border: 1px solid green; */
   height: 65px;
-  position:relative;
+  position: relative;
+  cursor: pointer;
 }
-#nav-right-block div{
+div.write-tweet-nav-btn {
   padding-top: 10px;
+  text-shadow: 1px 1px 5px lightgreen;
+}
+div.write-tweet-nav-btn:hover{
+  color:lightgreen;
 }
 #arrow {
   /* border:1px solid lightgreen; */
-  padding:5px;
-  position: absolute; right:-45px; top:0;
-  color:red;
-  animation: arrow-anim 3s 1s infinite ;
-  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: -45px;
+  top: 0;
+  color: red;
+  animation: arrow-anim 3s 1s infinite;
 }
 @keyframes arrow-anim {
-  0% {top: 0;}
-  20% {top: 7px;}
-  40% {top: 0;}
+  0% {
+    top: 0;
+  }
+  20% {
+    top: 7px;
+  }
+  40% {
+    top: 0;
+  }
 }
 
 /* Tablet Desktop ------ */
 @media only screen and (min-width: 768px) {
-  nav { 
-    height: 120px; 
+  nav {
+    height: 120px;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 4rem;
-  } 
+  }
   #nav-right-block {
     display: flex;
     flex-direction: column;
@@ -60,6 +74,4 @@ nav i {
   #arrow {
     position: relative;
   }
-  
-  
 }

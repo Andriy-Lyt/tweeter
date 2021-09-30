@@ -1,88 +1,90 @@
 /* font-family: 'Bungee', cursive;
   font-family: 'Source Sans Pro', sans-serif; */
-  * {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 
-  .flex-row-sb {
-    display:flex;
-    justify-content: space-between;
-  }
-  .flex-row-alend {
-    display:flex;
-    align-items: flex-end;
-  }
-  .inl-blk{
-    display: inline-block;
-  }
+.flex-row-sb {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-row-alend {
+  display: flex;
+  align-items: flex-end;
+}
+.inl-blk {
+  display: inline-block;
+}
 
-  /* adding a new Tweet: ------- */
-  #addtweet-form {
-    border: 3px solid #4056A1;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  section.new-tweet h2 {text-align: center;}
-  #addtweet-form label {
-    font-weight: 600;
-  }
-  #addtweet-form textarea {
-    margin: 12px 0;
-    width: 100%;
-  }
-  #addtweet-form textarea:focus{
-    outline: none;
-    border: 2px solid  #4056A1;
-    box-shadow: 0 0 4px 1px #719ECE;  
-  }
- #addtweet-form button {
-    padding: 6px;
-    background: #667bc4;
-    border: 2px solid #a1aee0;
-    color: #fff;
-    font-family: 'Bungee', cursive;
-    transition: all 0.2s;
-  }
-  #addtweet-form button:hover{
-    background: #fff;
-    color: #667bc4;
-    border: 2px solid #667bc4;
-  }
-  .counter{
-    font-family: 'Bungee', cursive;
-  }
+/* adding a new Tweet: ------- */
+section.new-tweet {
+  display: none;
+}
+#addtweet-form {
+  border: 3px solid #4056a1;
+  padding: 16px;
+  border-radius: 5px;
+}
+section.new-tweet h2 {
+  text-align: center;
+}
+#addtweet-form label {
+  font-weight: 600;
+}
+#addtweet-form textarea {
+  margin: 12px 0;
+  width: 100%;
+}
+#addtweet-form textarea:focus {
+  outline: none;
+  border: 2px solid #4056a1;
+  box-shadow: 0 0 4px 1px #719ece;
+}
+#addtweet-form button {
+  padding: 6px;
+  background: #667bc4;
+  border: 2px solid #a1aee0;
+  color: #fff;
+  font-family: "Bungee", cursive;
+  transition: all 0.2s;
+}
+#addtweet-form button:hover {
+  background: #fff;
+  color: #667bc4;
+  border: 2px solid #667bc4;
+}
+.counter {
+  font-family: "Bungee", cursive;
+}
 
-  /* Posted Tweets: --------- */
-  article.tweet {
-    margin-top: 15px;
-    border: 3px solid rgb(59, 58, 58);
-    padding: 10px;
-    min-height: 100px;
-    border-radius: 5px;
-  }
-  article.tweet:hover {
-    box-shadow: 0 0 2px 3px #97b3c5;
-  }
+/* Posted Tweets: --------- */
+article.tweet {
+  margin-top: 15px;
+  overflow: hidden;
+  border: 3px solid rgb(59, 58, 58);
+  padding: 10px;
+  min-height: 100px;
+  border-radius: 5px;
+}
+article.tweet:hover {
+  box-shadow: 0 0 2px 3px #97b3c5;
+}
 
-  article.tweet footer {
-    border-top: 3px solid grey;
-    min-height: 40px;
-  }
-  article.tweet footer .fas {
-    color: #4056A1;
-  }
-  article.tweet footer .fas:hover {
-    color: #b89c14;
-  }
-  #form-error { 
-    font-size: 1.2rem;
-    color: red;
-    margin: -5px 0 12px 0;
-    padding: 5px;
-  }
-
-
-
-
+article.tweet footer {
+  border-top: 3px solid grey;
+  min-height: 40px;
+}
+article.tweet footer .fas {
+  color: #4056a1;
+}
+article.tweet footer .fas:hover {
+  color: #b89c14;
+}
+#form-error {
+  font-size: 1.2rem;
+  color: red;
+  margin: -5px 0 12px 0;
+  padding: 5px;
+}
