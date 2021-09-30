@@ -19,7 +19,12 @@ $(document).ready(function() {
       type: "GET",
       url: "http://localhost:8080/tweets",
     })
-    .done((data) => renderTweets(data));
+    .done(function(data) {
+      data.sort(function(a, b){
+        return b.created_at - a.created_at;
+      });
+      renderTweets(data)
+    });
   }
 
   loadTweets();
@@ -64,14 +69,13 @@ $(document).ready(function() {
 $("#addtweet-form").on("submit", function(event) {
 
   event.preventDefault();
-  const $formData = $('textarea#tweet-text').val();
-  console.log($formData);
+  const $formData = $('textarea#tweet-text').val().replace(/\s/g,'');
 
   if ($formData == '') {
     $('#form-error').html("Please enter the Tweet text").css("border", "2px solid red");
   }
   else if($formData.length > 140) {
-    $('form-error').html("Max Tweet length is 140 characters").css("border", "2px solid red");
+    $('#form-error').html("Max Tweet length is 140 characters").css("border", "2px solid red");
   }
   else{
     $('#form-error').empty().css("border", "none");
