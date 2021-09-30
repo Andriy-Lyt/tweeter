@@ -23,7 +23,7 @@ $(document).ready(function() {
       data.sort(function(a, b){
         return b.created_at - a.created_at;
       });
-      renderTweets(data)
+      renderTweets(data);
     });
   }
 
