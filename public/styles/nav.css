@@ -29,11 +29,12 @@ nav i {
   position: relative;
   cursor: pointer;
 }
-div.write-tweet-nav-btn {
+.write-tweet-nav-btn {
+  color: rgb(194, 250, 194);
   padding-top: 10px;
-  text-shadow: 1px 1px 5px lightgreen;
+  text-shadow: 0px 0px 3px lightgreen;
 }
-div.write-tweet-nav-btn:hover{
+.write-tweet-nav-btn:hover{
   color:lightgreen;
 }
 #arrow {
