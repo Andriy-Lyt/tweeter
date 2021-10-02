@@ -66,12 +66,9 @@ $(document).ready(function () {
   }
 
   // Process New Tweet Form ---------
+  let maxlength = 140;
+
   $("#addtweet-form").on("submit", function (event) {
-    //hide new tweet form
-    $("section.new-tweet").hide();
-    //reset counter
-    let maxlength = 140;
-    $("output.counter").html(maxlength);
 
     event.preventDefault();
     const $formData = $("textarea#tweet-text").val().replace(/\s/g, "");
@@ -85,7 +82,13 @@ $(document).ready(function () {
         .html("Max Tweet length is 140 characters")
         .css("border", "2px solid red");
     } else {
+      //rmove error box red border
       $("#form-error").empty().css("border", "none");
+      //hide new tweet form
+      $("section.new-tweet").hide();
+      //reset counter
+      $("output.counter").html(maxlength);
+      
       const $formDataSer = $("#addtweet-form").serialize();
 
       $.ajax({
@@ -99,6 +102,18 @@ $(document).ready(function () {
     }
   });
 
+  //  textarea on focus: empty textarea if not more then 140 chars, show error message, reset counter  and set font color to black 
+  $("#tweet-text").on("focus", function () {
+    let currentLength = $(this).val().replace(/\s/g, "").length;
+    if (currentLength <= maxlength) {
+      $(this).val("");
+      $("#form-error").empty().css("border", "none");
+      $("output.counter").css("color", "inherit");
+      $("output.counter").html(maxlength);
+    }
+  });
+  
+
   // scroll to tweets, hide-show add tweet form
   $("#nav-right-block").on("click", function () {
     $("html, body").animate(
@@ -110,4 +125,6 @@ $(document).ready(function () {
     $("section.new-tweet").toggle();
     $("#tweet-text").focus();
   });
+
+
 }); // closing doc.ready funct

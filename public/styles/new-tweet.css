@@ -36,6 +36,7 @@ section.new-tweet h2 {
 #addtweet-form textarea {
   margin: 12px 0;
   width: 100%;
+  height: auto;
 }
 #addtweet-form textarea:focus {
   outline: none;
